@@ -52,7 +52,7 @@ namespace Xamarin.Forms.GoogleMaps.Android
                 tcs.TrySetResult(viewGroup);
             });
 
-            return  tcs.Task;
+            return tcs.Task;
         }
 
         public static Bitmap ConvertViewToBitmap(global::Android.Views.View v)
@@ -76,11 +76,9 @@ namespace Xamarin.Forms.GoogleMaps.Android
 
         public static Task<global::Android.Gms.Maps.Model.BitmapDescriptor> ConvertViewToBitmapDescriptor(global::Android.Views.View v)
         {
-            var bmp = ConvertViewToBitmap(v);
-            var img = global::Android.Gms.Maps.Model.BitmapDescriptorFactory.FromBitmap(bmp);
-
             return Task.Run(() => {
-
+                var bmp = ConvertViewToBitmap(v);
+                var img = global::Android.Gms.Maps.Model.BitmapDescriptorFactory.FromBitmap(bmp);
 
                 var buffer = ByteBuffer.Allocate(bmp.ByteCount);
                 bmp.CopyPixelsToBuffer(buffer);
@@ -97,7 +95,7 @@ namespace Xamarin.Forms.GoogleMaps.Android
                 var hash = Convert.ToBase64String(sha.ComputeHash(bytes));
 
                 lock (cacheLock)
-                {
+                { 
                     var exists = cache.ContainsKey(hash);
                     if (exists)
                     {
