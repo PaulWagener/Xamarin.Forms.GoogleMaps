@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata minClientVersion="2.8.3">
-		<id>Xamarin.Forms.GoogleMaps</id>
-		<title>Xamarin.Forms.GoogleMaps</title>
-		<version>5.0.0</version>
+		<id>Xamarin.Forms.GoogleMaps.PerSafe</id>
+		<title>Xamarin.Forms.GoogleMaps.PerSafe</title>
+		<version>5.0.1</version>
 		<releaseNotes>
+# 5.0.1
+
+## New Features
+
+* Merge original master branch in forked project
+
 # 5.0.0
 
 ## New Features
 
 * Support Xamarin.Forms 5.0
 * UWP is no longer supported
+
+# 3.3.1
+
+# Bug Fixes 
+
+* Fix threading issues causing crash
 
 # 3.3.0
 
@@ -25,6 +37,12 @@
 * #657 [Android]Java.Lang.IllegalArgumentException: 'Unmanaged descriptor'
 
 # 3.2.1
+
+## New Features
+
+* PR#640 [Android]Make Android MapRenderer.NativeMap overridable
+* #443 [UWP]Added Polygon and Circle
+
 # 3.2.1.5
 
 # Bug Fixes
@@ -50,15 +68,62 @@
 # Bug Fixes
 	* Make iOS MapRenderer callbacks used for MapView protected
 	* Check that marker is on map before setting the icon
+
+# 3.2.0
+
+## New Features
+
+* #123, PR603 [Android/iOS]Add support Xamarin.Forms.GoogleMaps.Clustering by @mierzynskim
+
+# 3.1.0
+
+## New Features
+
+* #519 Add support ItemsSource and ItemTemplate for Pins 
+
+# 3.0.6
+
+## Bug Fixes
+
+* #609 [Android]Anchor is initialized when updating Pin
+
+# 3.0.5
+
+## New Features
+
+* PR#572 [UWP]Allow pin changed event to collapse info windows
+* PR#567 [UWP]Add ability to provide xaml for pin
+
+## Bug Fixes
+
+* #573 [Android]Ground Overlay doesn't display custom image from View
+* PR#566 [UWP]Avoid deadlocks when using custom tile layer
+
+# 3.0.4
+
+## New Features
+
+* #555 Add support .NET Standard 1.0 to nuget package
+
+## Bug Fixes
+
+* #559 [iOS]MoveToRegion fails when longitude greater than 90 or less than -90
+
+# 3.0.3
+
+## Bug Fixes
+
+* #413 [iOS]Fix resets camera when device rotating
+
+full release notes is here - https://github.com/amay077/Xamarin.Forms.GoogleMaps/blob/master/RELEASE_NOTES.md
 		</releaseNotes>
 		<authors>amay077</authors>
 		<copyright>Copyright 2016-2022</copyright>
 		<license type="file">LICENSE.txt</license>
     	<projectUrl>https://github.com/Persafe/Xamarin.Forms.GoogleMaps</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>A Maps library for Xamarin.Forms that optimized for Google maps (PerSafe).</description>
-		<summary>A Maps library for Xamarin.Forms that optimized for Google maps (PerSafe).</summary>
-		<readme>docs\README.md</readme>
+		<description>Yet another Maps library for Xamarin.Forms that optimized for Google maps.</description>
+		<summary>Yet another Maps library for Xamarin.Forms that optimized for Google maps</summary>
 		<tags>xamarin forms maps xamarinforms xamarinformsmaps xamarin.forms.maps xamarinformsgooglemaps xamarin.forms.googlemaps google googlemap</tags>
 	<dependencies>
       <group>
@@ -74,9 +139,6 @@
 	</dependencies>
 	</metadata>
 	<files>
-		<!--ReadMe-->
-    	<file src="..\README.md" target="docs\" />
-
 		<!--License-->
 		<file src=".\LICENSE.txt" target="" />
 
