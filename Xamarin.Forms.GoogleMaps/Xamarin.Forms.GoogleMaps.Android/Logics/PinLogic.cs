@@ -12,7 +12,7 @@ using Xamarin.Forms.GoogleMaps.Android.Factories;
 
 namespace Xamarin.Forms.GoogleMaps.Logics.Android
 {
-    internal class PinLogic : DefaultPinLogic<Marker, GoogleMap>
+    public class PinLogic : DefaultPinLogic<Marker, GoogleMap>
     {
         protected override IList<Pin> GetItems(Map map) => map.Pins;
 
@@ -43,7 +43,7 @@ namespace Xamarin.Forms.GoogleMaps.Logics.Android
             _onMarkerDeleted = onMarkerDeleted;
         }
 
-        internal override void Register(GoogleMap oldNativeMap, Map oldMap, GoogleMap newNativeMap, Map newMap)
+        public override void Register(GoogleMap oldNativeMap, Map oldMap, GoogleMap newNativeMap, Map newMap)
         {
             base.Register(oldNativeMap, oldMap, newNativeMap, newMap);
 
@@ -61,7 +61,7 @@ namespace Xamarin.Forms.GoogleMaps.Logics.Android
 
         private bool isUnregistered = false;
 
-        internal override void Unregister(GoogleMap nativeMap, Map map)
+        public override void Unregister(GoogleMap nativeMap, Map map)
         {
             if (nativeMap != null)
             {
@@ -245,7 +245,7 @@ namespace Xamarin.Forms.GoogleMaps.Logics.Android
             _withoutUpdateNative = false;
         }
 
-        internal override void OnMapPropertyChanged(PropertyChangedEventArgs e)
+        public override void OnMapPropertyChanged(PropertyChangedEventArgs e)
         {
             if (e.PropertyName == Map.SelectedPinProperty.PropertyName)
             {

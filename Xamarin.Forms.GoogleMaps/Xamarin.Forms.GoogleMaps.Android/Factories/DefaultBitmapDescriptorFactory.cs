@@ -26,7 +26,12 @@ namespace Xamarin.Forms.GoogleMaps.Android.Factories
                 case BitmapDescriptorType.Default:
                     return AndroidBitmapDescriptorFactory.DefaultMarker((float)((descriptor.Color.Hue * 360f) % 360f));
                 case BitmapDescriptorType.Bundle:
-                    return AndroidBitmapDescriptorFactory.FromAsset(descriptor.BundleName);
+					var context = FormsGoogleMaps.Context;
+                    using (var stream = context.Assets.Open(descriptor.BundleName))
+                    {
+                        return AndroidBitmapDescriptorFactory.FromBitmap(BitmapFactory.DecodeStream(stream));
+                    }
+
                 case BitmapDescriptorType.Stream:
                     if (descriptor.Stream.CanSeek && descriptor.Stream.Position > 0)
                     {
